@@ -50,6 +50,8 @@ servicesBoxes.forEach(function(box){
 
             this.classList.remove("Current")
             this.classList.add("Actif")
+
+            this.childNodes[7].classList.remove("Service-Hidden")
         }
         else
         {
@@ -68,9 +70,9 @@ servicesBoxes.forEach(function(box){
 
             this.classList.add("Current")
             this.classList.remove("Actif")
+
+            this.childNodes[7].classList.add("Service-Hidden")
             currentServiceBox.element = null;
         }
     })
 });
-
-var hide = document.querySelector(".Service-Hidden")
