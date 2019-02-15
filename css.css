@@ -37,7 +37,7 @@ h1, h2, h3 {
 
 #Summary #Ynov {
     width: 80%;
-    height: 18%;
+    height: 16%;
 
     padding: 10% 10% 10% 10%;
     align-self: center;
@@ -71,6 +71,24 @@ h1, h2, h3 {
 #Summary #Links > a {
     text-decoration: none;
     color: white;
+}
+
+#Summary #Links > a {
+    display: flex;
+
+    width: 90%;
+    height: 1%;
+}
+
+#Summary #Links a > div {
+    height: 80%;
+    width: 0%; /* max width: 20% */
+
+    background: rgb(226, 147, 0);
+
+    margin-left: 5%;
+
+    transition: all 0.4s;
 }
 
 #Summary #Links > a:active, #Summary #Links > a:visited {
@@ -172,7 +190,7 @@ ul {
 }
 
 #Content #Profile {
-    background: linear-gradient(210deg, #c9b6a58a, transparent);
+    background: linear-gradient(210deg, #f3b96d71, transparent);
 
     display: flex;
     justify-content: center;
@@ -205,11 +223,18 @@ ul {
 #Profile h2 {
     color: rgba(255, 255, 255, 0.89);
     
-    font-weight: normal;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    font-family: fantasy;
+    font-weight: 600;
+    letter-spacing: 0.7px;
 
-    letter-spacing: 0.5px;
+    line-height: 2px;
     font-size: 30px;
+
+    transform: scaleY(1.05);
+}
+
+#Profile h2 strong {
+    color: rgba(255, 255, 255, 0.815);
 }
 
 #Content #About, #Content #Services, #Content #Contact {
@@ -241,6 +266,10 @@ ul {
 
     font-size: 24px;
     letter-spacing: 1px;
+}
+
+#About .Personnal-Info h2 span {
+    color: orange;
 }
 
 #About .Personnal-Info p {
@@ -290,10 +319,12 @@ ul {
 
     border-radius: 3%;
     text-decoration: none;
+
+    transition: all 0.3s ease-out;
 }
 
 .Profile-Buttons a:hover {
-    background: #2d3953;
+    background: #283550;
 }
 
 #About .Personnal-Info .Profile-Buttons {
@@ -386,6 +417,8 @@ ul {
     width: 70%;
     height: 100%;
     border-radius: 50px;
+
+    transition: all 1.3s ease-in-out;
 }
 
 #Skills .Skills-List-Element .Skill-ProgressionBar.one {
@@ -394,7 +427,6 @@ ul {
 
 #Skills .Skills-List-Element .Skill-ProgressionBar.one .Skill-ProgressionCurrent {
     background: #f8ab1b;
-    width: 90%;
 }
 
 #Skills .Skills-List-Element .Skill-ProgressionBar.two {
@@ -403,7 +435,6 @@ ul {
 
 #Skills .Skills-List-Element .Skill-ProgressionBar.two .Skill-ProgressionCurrent {
     background: #3d98ff;
-    width: 60%;
 }
 
 #Skills .Skills-List-Element .Skill-ProgressionBar.three {
@@ -412,7 +443,6 @@ ul {
 
 #Skills .Skills-List-Element .Skill-ProgressionBar.three .Skill-ProgressionCurrent {
     background: #f1e42a;
-    width: 70%;
 }
 
 #Skills .Skills-List-Element .Skill-ProgressionBar.four {
@@ -421,7 +451,6 @@ ul {
 
 #Skills .Skills-List-Element .Skill-ProgressionBar.four .Skill-ProgressionCurrent {
     background: #da39a9;
-    width: 80%;
 }
 
 #Services .Service-Container {
@@ -648,7 +677,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s;
+    transition: all 0.3s ease-out;
 }
 
 #Contact .Contact-Container .Contact-Form .Button-Send-Message a {
@@ -662,5 +691,7 @@ ul {
 }
 
 #Contact .Contact-Container .Contact-Form .Button-Send-Message:hover {
-    background: #2d3953;
+    background: #283550;
+    cursor: pointer;
 }
+

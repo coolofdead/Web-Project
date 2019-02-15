@@ -1,3 +1,4 @@
+// Buttons event on the portfolio slide
 const leftArrow = document.querySelector(".js-left-arrow");
 const rightArrow = document.querySelector(".js-right-arrow");
 
@@ -26,6 +27,9 @@ function ChangePortfolioImage(arrow) {
     projectImage.src = projectUrl[urlIndex];
 }
 
+
+
+// Control Services-Box & add effect when "open"
 var servicesBoxes = document.querySelectorAll(".Service-Box");
 let currentServiceBox = {width: 0, height: 0, top: 0, left: 0, element: null};
 
@@ -76,3 +80,94 @@ servicesBoxes.forEach(function(box){
         }
     })
 });
+
+
+
+//Use this to change "I'm web dev"
+let job = "Web Dev";
+const profileSentence = document.querySelectorAll(".js-overwrite")[0];
+const aboutSentence = document.querySelectorAll(".js-overwrite")[1];
+aboutSentence.innerText = "";
+profileSentence.innerHTML = "";
+
+function DisplayJob (current) {
+    aboutSentence.innerHTML += job[current];
+    profileSentence.innerHTML += job[current];
+
+    if(current >= job.length - 1)
+    {
+        setTimeout(()=>{
+            EraseJob(current);
+        }, 2000)
+
+        return;
+    }
+
+    current++;
+
+    setTimeout(()=>{
+        DisplayJob(current);
+    }, 50);
+}
+
+function EraseJob (current) {
+    aboutSentence.innerHTML = aboutSentence.innerHTML.substring(0, current);
+    profileSentence.innerHTML = profileSentence.innerHTML.substring(0, current);
+
+    if(current == 0)
+    {
+        job = job == "Web Dev" ? "Game Dev" : "Web Dev";
+
+        setTimeout(()=>{
+            DisplayJob(0);
+        }, 2000);
+
+        return;
+    }
+    current--;
+
+    setTimeout(()=>{
+        EraseJob(current);
+    }, 50);
+}
+
+DisplayJob(0)
+
+
+
+// Summary Buttons orange bar effect
+const summaryLinks = document.querySelectorAll("#Links a");
+for(link of summaryLinks)
+{
+    link.addEventListener("mouseenter", function() {
+        this.childNodes[1].style.width = "20%";
+    });
+
+    link.addEventListener("mouseleave", function() {
+        this.childNodes[1].style.width = "0%";
+    });
+}
+
+
+
+// Skills progress bar effect
+const skillProgressBar = document.querySelectorAll(".Skill-ProgressionCurrent");
+let oldProgressions = [];
+
+for(progression of skillProgressBar)
+{
+    oldProgressions.push(progression.style.width);
+    progression.style.width = "0%";
+}
+
+let Skills = document.querySelector("#Skills");
+Skills.addEventListener("mouseenter", function(){
+    for(index in skillProgressBar)
+    {
+        skillProgressBar[index].style.width = oldProgressions[index];
+    }
+});
+
+
+
+// Show Services-Box hidden divs
