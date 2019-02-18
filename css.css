@@ -171,7 +171,7 @@ ul {
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .Content-Title p {
@@ -257,7 +257,8 @@ ul {
 }
 
 #About .Personnal-Info {
-    padding: 0% 3% 3% 3%;
+    padding: 0% 6% 0% 6%;
+    height: 90%;
 }
 
 #About .Personnal-Info h2 {
@@ -277,6 +278,7 @@ ul {
     line-height: 30px;
 
     color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 5%;
 }
 
 #About .Personnal-Info .Info {
@@ -286,7 +288,9 @@ ul {
     letter-spacing: 1px;
     font-size: 14px;
 
-    height: 30%;
+    height: 34%;
+
+    margin-bottom: 2%;
 }
 
 #About .Personnal-Info .Info strong {
@@ -365,6 +369,9 @@ ul {
     line-height: 30px;
 
     color: rgba(0, 0, 0, 0.7);
+
+    text-align: justify;
+    width: 80%;
 }
 
 #Skills .Skills-List {
@@ -488,6 +495,15 @@ ul {
 
 #Services .Service-Container .Service-Box.Actif {
     transition: all 0.7s ease-in-out;
+
+    cursor: pointer;
+}
+
+#Services .Service-Container .Service-Box.Actif img {
+    height: 80px;
+    width: 80px;
+
+    margin-bottom: 3%;
 }
 
 #Services .Service-Container .Service-Box.Current:hover{
@@ -500,6 +516,7 @@ ul {
     width: 40px;
 
     margin-bottom: 6%;
+    transition: all 0.4s ease-out;
 }
 
 #Services .Service-Container .Service-Box h2 {
@@ -510,20 +527,103 @@ ul {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#Services .Service-Container .Service-Box p {
+#Services .Service-Container .Service-Box p, #Services .Service-Doc-Text, #Services .Service-Git, #Services .Service-Web {
     letter-spacing: 2px;
     line-height: 20px;
 
     font-size: 13px;
+    color: rgba(32, 32, 32, 0.877);
+}
+
+#Services .Service-Doc {
+    display: flex;
+
+    height: 80%;
+    width: 100%;
+}
+
+#Services .Service-Doc img {
+    height: 100% !important;
+    width: 60% !important;
+
+    margin: 0% !important;
+}
+
+#Services .Service-Doc .Service-Doc-Text img {
+    height: 80% !important;
+    width: 100% !important;
+
+    padding-top: 2%;
+}
+
+#Services .Service-Photshop {
+    display: flex;
+    height: 70%;
+    width: 100%;
+}
+
+#Services .Service-Photshop > * {
+    display: flex;
+    height: 100%;
+    width: 50%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#Services .Service-Photshop .Photoshop-Before {
+    border-right: 2px solid rgba(64, 63, 122, 0.774);
+}
+
+#Services .Service-Photshop img {
+    height: 90% !important;
+    width: 90% !important;
+}
+
+#Services .Service-Dev {
+    display: flex;
+
+    height: 80%;
+    width: 100%;
+
+    justify-content: space-evenly;
+}
+
+#Services .Service-Dev > img {
+    height: 80% !important;
+    width: 48% !important;
+
+    padding: 2%;
+}
+
+#Services .Service-Dev img:first-of-type {
+    border-right: 2px solid rgba(64, 63, 122, 0.774);
+}
+
+#Services .Service-Git {
+    height: 70%;
+}
+
+#Services .Service-Git ul {
+    display: flex;
+    flex-flow: wrap;
+
+    height: 50%;
+
+    padding-top: 2%;
+}
+
+#Services .Service-Git ul > li {
+    width: 50%;
 }
 
 #Projects .Project-Container {
-    width: 100%;
+    width: 99%;
     height: 80%;
 
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
 }
 
 #Projects .Project-Container img {
