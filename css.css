@@ -581,6 +581,10 @@ ul {
     width: 90% !important;
 }
 
+#Services .Service-Game > canvas {
+    width: 100%;
+}
+
 #Services .Service-Dev {
     display: flex;
 
