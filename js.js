@@ -230,7 +230,7 @@ var Ball = {
     xPos : 1,
     yPos : 1,
 
-    speed : 6,
+    speed : 4,
 
     radius : gameWidth * 1.5 / 100,
     color : "grey",
@@ -478,7 +478,7 @@ var CollisionCheck = function ()
     }
     if(Ball.yPos - Ball.radius * 2 > SpaceBar.yPos)
     {
-        alert("Close and open to restart");
+        // alert("Close and open to restart");
     }
     
     // Check colision boule - blocks

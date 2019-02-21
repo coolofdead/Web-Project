@@ -581,8 +581,13 @@ ul {
     width: 90% !important;
 }
 
+#Services .Service-Game {
+    height: 60%;
+}
+
 #Services .Service-Game > canvas {
     width: 100%;
+    height: 100%;
 }
 
 #Services .Service-Dev {
