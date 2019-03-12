@@ -108,14 +108,16 @@ h1, h2, h3 {
 }
 
 #Summary #Social_Media a > img {
-    height: 16px;
-    width: 16px;
+    height: 18px;
+    width: 18px;
 
     filter: invert(1);
+
+    transition: all ease-in 0.1s;
 }
 
 #Summary #Social_Media a:hover > img {
-    filter: invert(0);
+    transform: translateY(-6px);
 }
 
 #Content {
@@ -494,8 +496,6 @@ ul {
 }
 
 #Services .Service-Container .Service-Box.Actif {
-    transition: all 0.7s ease-in-out;
-
     cursor: pointer;
 }
 
@@ -659,6 +659,8 @@ ul {
 
     border: none;
     text-transform: none;
+
+    outline: none;
 
     cursor: pointer;
 }

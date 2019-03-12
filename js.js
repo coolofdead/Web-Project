@@ -53,7 +53,7 @@ function DisplayJob (current) {
 
     setTimeout(()=>{
         DisplayJob(current);
-    }, 50);
+    }, 40);
 }
 
 function EraseJob (current) {
@@ -74,7 +74,7 @@ function EraseJob (current) {
 
     setTimeout(()=>{
         EraseJob(current);
-    }, 50);
+    }, 40);
 }
 
 DisplayJob(0)
