@@ -30,7 +30,7 @@ function ChangePortfolioImage(arrow) {
 
 
 //Use this to change "I'm web dev"
-let job = "Web Dev";
+let job = "a Web Dev";
 const profileSentence = document.querySelectorAll(".js-overwrite")[0];
 const aboutSentence = document.querySelectorAll(".js-overwrite")[1];
 aboutSentence.innerText = "";
@@ -62,7 +62,7 @@ function EraseJob (current) {
 
     if(current == 0)
     {
-        job = job == "Web Dev" ? "Game Dev" : "Web Dev";
+        job = job == "a Web Dev" ? "a Game Dev" : "a Web Dev";
 
         setTimeout(()=>{
             DisplayJob(0);
