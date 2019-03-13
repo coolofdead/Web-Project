@@ -23,7 +23,7 @@ L’ajout du javascript permet d’embellir le site via des animations sur des �
 
 Le tout rend le site léger et structuré avec des intéractions simples et visible pour l'utilisateur.
 
-[GitHub Logo](/Readme Files/MCD.png)
+![GitHub Logo](/Readme Files/MCD.png)
 
 **Merise**
 Le merise
