@@ -1,18 +1,22 @@
 **Présentation du projet web :**
 
-Le site web devra contenir plusieurs page, 1 par ensemble (CV Overview, back page, formulaire et contact ..).
-Pour cela il faudra plusieurs informations stockées dans une base de données :
--	Des informations sur l’utilisateur
--	Son parcours (études, diplômes, stages ..)
--	Tout fichier pouvant être téléchargé ou affiché en quick view
+Le site web se découpe en 2 parties, un menu fixe à gauche ainsi que d'un élément contenant le contenu du site.
 
-Un fil d’actualité dans le style de twitter ou l’utilisateur pourra poster des informations concernant des nouveautés sur son profil ou pour échanger publiquement voir recevoir des avis, notes de ses employeurs. (voir Template 2)
+Le menu contient ne change pas de position quand on se déplace dans le site. Il permet avec les bouttons de se déplacer d'une catégorie à une autre. De plus une série d'icone se trouve en bas (*twitter, instagram, facebook mais aussi linkedin et git*) afin de me contacter.
 
-Le site web se décompose en 4 parties, une légère overview du profil de l’utilisateur, puis un CV plus comprenant des liens vers ses travaux ainsi que son historique professionnel avec les boites dans lesquels l’utilisateur a travaillé .
- Enfin il y aura une page dédiée au formulaire ainsi que des liens vers ses pages de contacts professionnels (linkedin, twitter ..).
-Ces pages la étant très proche, il a été pensé que les « fusionner » pourrait être une idée intéressante en essayant de garder une certaine aisance pour se déplacer entre les deux. 
+Des anmimations (*hover, click ..*) aide à la compréhension et montre que l'élément est intéractif.
 
-Pour que l’utilisateur puisse avoir le contrôle sur toute les informations présente sur la page et voir un historique des personnes qui passe sur sa page, il y aura une interface administrateur avec des outils pour importer, modifier ou supprimer des informations ainsi que des statistiques sur une 5eme page administrateur que seul l’utilisateur peut avoir accès.
+Le contenu à droite, quand à lui, contient les catégories importantes :
+- Services
+- About Me
+- Portfolio
+- Contact
+
+Le contenu est déffilable de haut en bas. Chaque catégorie à une taille et une largeur égal à l'écran. Quand l'utilisateur se déplace avec le menu à sa gauche, la page descend et affiche la catégorie.
+
+![About Web](/Readme/About.png)
+
+Comme on peut le voir sur l'image au dessus, l'utilisateur à sa souris sur le boutton About, qui est surligné en orange. La catégorie About s'affiche à sa droite et prend bien tout l'espace disponible. Chaque catégorie comme About marchent de la meme facon et leur contenu est affiché dans cet espace.
 
 L’ajout du javascript permet d’embellir le site via des animations sur des éléments :
 
@@ -23,7 +27,7 @@ L’ajout du javascript permet d’embellir le site via des animations sur des �
 
 Le tout rend le site léger et structuré avec des intéractions simples et visible pour l'utilisateur.
 
-![GitHub Logo](/Readme/MCD.png)
+![MCD](/Readme/MCD.png)
 
 **Merise**
 Le merise
