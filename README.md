@@ -27,7 +27,14 @@ L’ajout du javascript permet d’embellir le site via des animations sur des �
 
 Le tout rend le site léger et structuré avec des intéractions simples et visible pour l'utilisateur.
 
+**Merise :**
+
+Le mersie est la pour représenter la partie base de donnéee / Back End du site. Pour ce site web, merise représente comment le contact va marcher, les compétences et leurs informations seront stockées.
+
 ![MCD](/Readme/MCD.png)
 
-**Merise**
-Le merise
+L'image au dessus montre comment la base de donéne devra etre structurée et ce qu'elle devra contenir.
+
+- System de contact
+- Mise à jour de la photo de profil
+- Mise à jour des barres d'éxpériences
