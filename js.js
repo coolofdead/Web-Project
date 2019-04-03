@@ -1,3 +1,14 @@
+window.addEventListener("load", function(){
+    setTimeout(function(){
+        if(document.body.childNodes[7] != undefined && document.body.childNodes[8] != undefined)
+        {
+            document.body.childNodes[7].remove();
+            document.body.childNodes[8].remove();
+        }
+    }, 1000);
+})
+
+
 // Buttons event on the portfolio slide
 const leftArrow = document.querySelector(".js-left-arrow");
 const rightArrow = document.querySelector(".js-right-arrow");
