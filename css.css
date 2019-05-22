@@ -335,10 +335,8 @@ ul {
 
 #About .Personnal-Info .Profile-Buttons {
     height: 20%;
-    width: 80%;
 
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -808,3 +806,148 @@ ul {
     cursor: pointer;
 }
 
+@media screen and (max-width: 900px) {
+    #Summary {
+        width: 25%;
+    }
+
+    #Content {
+        width: 75%;
+        left: 25%;
+    }
+
+    #About .Profile-Container {
+        flex-direction: column;
+    }
+
+    #About .Personnal-Info {
+        padding-top: 5%;
+    }
+
+    #About .Personnal-Info .Info {
+        margin-bottom: 5%;
+    }
+
+    #Services .Service-Container .Service-Box {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #Services .Service-Container .Service-Box p {
+        overflow: hidden;
+    }
+
+    #Contact .Contact-Container .Contact-Info ul {
+        height: 40%;
+    }
+    
+    #Contact .Contact-Container .Contact-Info ul li p {
+        width: 90%;
+        line-height: normal;
+        word-break: break-all;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #Bottom_Bar {
+        display: none;
+    }
+
+    #Summary {
+        display: none;
+    }
+
+    #Content {
+        width: 100%;
+        left: 0%;
+    }
+
+    #Content > * {
+        height: 100vh;
+    }
+
+    #Profile p {
+        text-align: center;
+    }
+
+    #About .Profile-Container {
+        flex-direction: column;
+    }
+
+    #About #Profile-picture {
+        width: 80vw;
+        height: auto;
+    }
+
+    #About .Personnal-Info .Profile-Buttons {
+        justify-content: center;
+        align-items: flex-end;
+
+        height: 25%;
+    }
+
+    #About .Personnal-Info .Info li {
+        word-break: break-all;
+    }
+
+    #About .Personnal-Info .Profile-Buttons div:nth-child(2) {
+        display: none;
+    }
+
+    #Skills {
+        height: 70vh;
+    }
+
+    #Skills .Content-Container {
+        flex-direction: column;
+    }
+
+    #Skills .Content-Container .Abilities-Title {
+        height: auto;
+    }
+
+    #Skills .Content-Container .Abilities-Title p {
+        display: none;
+    }
+    
+    #Services .Service-Container {
+        flex-flow: column wrap;
+    }
+    
+    #Services .Service-Container .Service-Box {
+        filter: none;
+        height: 25%;
+        width: 45%;
+        position: initial;
+    }
+
+    #Projects .Project-Container {
+        position: relative;
+    }
+
+    #Projects .Project-Container img {
+        width: 100%;
+        padding: 0%;
+    }
+
+    #Projects .Project-Container .Change-Image {
+        position: absolute;
+        top: 48vh;
+    }
+
+    #Projects .Project-Container .Change-Image:nth-of-type(2) {
+        left: 78vw;
+    }
+
+    #Contact .Contact-Container .Contact-Info {
+        display: none;
+    }
+
+    #Contact .Contact-Container .Contact-Form {
+        width: 100%;
+    }
+
+    #Contact .Contact-Container .Contact-Form .Button-Send-Message {
+        width: 45%;
+    }
+}
