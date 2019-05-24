@@ -116,7 +116,7 @@ for(progression of skillProgressBar)
     oldProgressions.push(progression.style.width);
     progression.style.width = "0%";
 }
-
+console.log(skillProgressBar)
 let Skills = document.querySelector("#Skills");
 Skills.addEventListener("mouseenter", function(){
     for(index in oldProgressions)
