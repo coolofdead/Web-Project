@@ -460,6 +460,14 @@ ul {
     background: #da39a9;
 }
 
+#Skills .Skills-List-Element:nth-child(5) .Skill-ProgressionBar {
+    background: rgba(82, 40, 179, 0.39);
+}
+
+#Skills .Skills-List-Element:nth-child(5) .Skill-ProgressionBar .Skill-ProgressionCurrent {
+    background: #b674e2;
+}
+
 #Services .Service-Container {
     height: 80%;
     width: 100%;
@@ -806,14 +814,45 @@ ul {
     cursor: pointer;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (min-width: 600px) {
     #Summary {
-        width: 25%;
+        width: 100vw;
+        height: 10vh;
+        
+        flex-direction: row;
+        z-index: 1;
+    }
+
+    #Social_Media {
+        display: none !important;
+    }
+
+    #Summary #Ynov {
+        width: auto;
+        height: 75%;
+
+        margin-left: 1em;
+
+        padding: 0%;
+    }
+
+    #Summary #Links {
+        padding: 0%;
+
+        flex-direction: row;
+
+        align-items: center;
+    }
+    
+    #Summary #Links > a {
+        width: auto;
     }
 
     #Content {
-        width: 75%;
-        left: 25%;
+        width: 100vw;
+        left: 0%;
+        height: 85vh;
+        top: 10vh;
     }
 
     #About .Profile-Container {
@@ -828,9 +867,15 @@ ul {
         margin-bottom: 5%;
     }
 
+    #Services .Service-Container {
+        top: 3em;
+    }
+
     #Services .Service-Container .Service-Box {
         display: flex;
         flex-direction: column;
+
+        height: 35%;
     }
     
     #Services .Service-Container .Service-Box p {
@@ -846,9 +891,17 @@ ul {
         line-height: normal;
         word-break: break-all;
     }
+
+    #Contact .Contact-Container .Contact-Form .Button-Send-Message {
+        width: 40%;
+    }
 }
 
 @media screen and (max-width: 400px) {
+    #Content {
+        height: 100vh;
+    }
+
     #Bottom_Bar {
         display: none;
     }
@@ -860,6 +913,10 @@ ul {
     #Content {
         width: 100%;
         left: 0%;
+    }
+
+    #Projects .Content-Title, #Contact .Content-Title {
+        height: 15%;
     }
 
     #Content > * {
@@ -875,8 +932,11 @@ ul {
     }
 
     #About #Profile-picture {
-        width: 80vw;
+        width: 70vw;
         height: auto;
+        
+        margin-bottom: 2vh;
+        margin-top: 2vh;
     }
 
     #About .Personnal-Info .Profile-Buttons {
@@ -888,6 +948,7 @@ ul {
 
     #About .Personnal-Info .Info li {
         word-break: break-all;
+        line-height: 1.5em;
     }
 
     #About .Personnal-Info .Profile-Buttons div:nth-child(2) {
@@ -911,28 +972,38 @@ ul {
     }
     
     #Services .Service-Container {
-        flex-flow: column wrap;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        overflow: scroll;
     }
     
     #Services .Service-Container .Service-Box {
         filter: none;
-        height: 25%;
-        width: 45%;
-        position: initial;
+        height: 40%;
+        width: 80%;
+
+        margin-bottom: 5%;
+
+        position: static;
     }
 
     #Projects .Project-Container {
         position: relative;
+        margin-top: 1.5em;
     }
 
     #Projects .Project-Container img {
         width: 100%;
+        height: 80%;
         padding: 0%;
+
+        object-fit: cover;
     }
 
     #Projects .Project-Container .Change-Image {
         position: absolute;
-        top: 48vh;
+        top: 70vh;
     }
 
     #Projects .Project-Container .Change-Image:nth-of-type(2) {

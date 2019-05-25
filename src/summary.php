@@ -1,5 +1,5 @@
 <div id="Summary">
-    <img id="Ynov" src="Images\ynov.png" width="140px", height="100px">
+    <img id="Ynov" src="Images\ynov.png" width="140px" height="100px">
 
     <div id="Links">
         <a id="Sum_Home" href="#Profile">HOME<div class="Summary-FillBar"></div></a>

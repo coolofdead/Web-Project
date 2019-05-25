@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Web Project</title>
         <link rel="stylesheet" type="text/css" media="screen" href="./css.css">
-        <!--  -->
+        <script> var projectUrls = ["Images/flyday.jpg", "Images/Maze.png", "Images/Pathfinder.png", "Images/flower.jpg"] </script>
         <script src="./js.js" type="text/javascript" defer></script>
     </head>
 

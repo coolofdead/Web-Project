@@ -15,7 +15,6 @@ const rightArrow = document.querySelector(".js-right-arrow");
 
 const projectImage = document.querySelector("#Projects img");
 
-let projectUrl = ["Images/flyday.jpg", "Images/Maze.png", "Images/Pathfinder.png", "Images/flower.jpg"];
 let urlIndex = 0;
 
 for(arrow of [leftArrow, rightArrow])
@@ -28,14 +27,14 @@ for(arrow of [leftArrow, rightArrow])
 function ChangePortfolioImage(arrow) {
     if(arrow === rightArrow)
     {
-        urlIndex = urlIndex < projectUrl.length -1 ? ++urlIndex : 0;
+        urlIndex = urlIndex < projectUrls.length -1 ? ++urlIndex : 0;
     }
     if(arrow === leftArrow)
     {
-        urlIndex = urlIndex > 0 ? --urlIndex : projectUrl.length-1;
+        urlIndex = urlIndex > 0 ? --urlIndex : projectUrls.length-1;
     }
 
-    projectImage.src = projectUrl[urlIndex];
+    projectImage.src = projectUrls[urlIndex];
 }
 
 
@@ -116,14 +115,21 @@ for(progression of skillProgressBar)
     oldProgressions.push(progression.style.width);
     progression.style.width = "0%";
 }
-console.log(skillProgressBar)
-let Skills = document.querySelector("#Skills");
-Skills.addEventListener("mouseenter", function(){
+
+var displaySkills = function(){
     for(index in oldProgressions)
     {
         skillProgressBar[index].style.width = oldProgressions[index];
     }
-});
+};
+
+// call the function when the screen is too smal: device = smarthphone / ipad
+if(window.screen.width <= 900) {
+    displaySkills();
+}
+
+let Skills = document.querySelector("#Skills");
+Skills.addEventListener("mouseenter", displaySkills);
 
 
 

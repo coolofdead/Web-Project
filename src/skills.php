@@ -3,7 +3,8 @@
         ["name" => "HTML", "pourcentage" => 90, "year_experience" => 1, "icon" => "html.png"],
         ["name" => "CSS", "pourcentage" => 80, "year_experience" => 2, "icon" => "css.png"],
         ["name" => "JavaScript", "pourcentage" => 90, "year_experience" => 2, "icon" => "javascript.png"],
-        ["name" => "C#", "pourcentage" => 90, "year_experience" => 2, "icon" => "Csharp.png"]        
+        ["name" => "C#", "pourcentage" => 90, "year_experience" => 2, "icon" => "Csharp.png"],        
+        ["name" => "Php", "pourcentage" => 60, "year_experience" => 1, "icon" => "php.png"]       
     ];
 ?>
 
