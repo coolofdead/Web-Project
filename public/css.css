@@ -267,7 +267,7 @@ ul {
     font-family: fantasy;
     font-weight: 600;
 
-    font-size: 24px;
+    font-size: 22px;
     letter-spacing: 1px;
 }
 
@@ -829,7 +829,7 @@ ul {
 
     #Summary #Ynov {
         width: auto;
-        height: 75%;
+        height: 50%;
 
         margin-left: 1em;
 
@@ -897,7 +897,13 @@ ul {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 400px) and (max-width: 600px) {
+    #About .Personnal-Info h2 {
+        height: 5vh; /* À cause de l'animation js, ça crée un retour chariot dérengeant pour l'UX */
+    }
+}
+
+@media screen and (max-width: 599px) {
     #Content {
         height: 100vh;
     }
@@ -927,12 +933,16 @@ ul {
         text-align: center;
     }
 
+    #About {
+        height: 110vh;
+    }
+
     #About .Profile-Container {
         flex-direction: column;
     }
 
     #About #Profile-picture {
-        width: 70vw;
+        width: 50vw;
         height: auto;
         
         margin-bottom: 2vh;
