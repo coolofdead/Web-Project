@@ -6,7 +6,7 @@
             <div class="Service-Box Current" style="top:-5%; left:0%">
                 <img src="Images\document.png">
                 <h2 class="Service-Title">Documents</h2>
-                <p>I'm mostly doing some techniqual design document but i can make other types of docs. With one year of experiences at Bellecour Ecole and as a free time game designer, this is my hobby.</p>
+                <p>I'm mostly doing some technical design document but i can make other types of docs. With one year of experience at Bellecour Ecole and as a free time game designer, this is my hobby.</p>
                 <div class="Service-Hidden Service-Doc">
                     <img src="Images/Doc.png">
                     <div class="Service-Doc-Text">

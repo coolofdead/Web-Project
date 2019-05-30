@@ -12,10 +12,10 @@
     <div class="Content-Container">
         <div class="Abilities-Title">
             <h2>
-                Some about my abilities
+                About my abilities
             </h2>
             <p>
-                So here ares my abilities, as a web dev, mostly front end, i'm learning a lot of programming languages. This slide show like my top 4 or what i master the most currently. Obviously i'm always learning new things on every languages and loving learn them. I have some skils in other things than programming but it's mainly my main hobby and playground, i'm open to all new things that happen on this branch and up to learn them all.
+                So here are my abilities, as a web dev, mostly front end, i'm learning a lot of programming languages. This slide show my top 4 or what i master the most currently. Obviously i'm always learning new things on every languages and love learning them. I have some skills in other things than programming but it's my main hobby and playground, i'm open to all new things that happen on this branch and up to learn them all.
             </p>
         </div>
 
