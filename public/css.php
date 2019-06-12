@@ -1,9 +1,3 @@
-<?php
-   header('content-type: text/css');
-   ob_start('ob_gzhandler');
-   header('Cache-Control: max-age=31536000, must-revalidate');
-?>
-
 html, body {
     height: 100vh;
     width: 100%;
@@ -435,9 +429,13 @@ ul {
 }
 
 <?php
-    session_start();
+    $request = $connection->prepare("
+    SELECT front_color, back_color FROM abilities;
+    ");
+    $request->execute();
+    $styles = $request->fetchAll(PDO::FETCH_ASSOC);
     $index = 0;
-    foreach($_SESSION["styles"] as $skill)
+    foreach($styles as $skill)
     {
         $index++;
         echo("
@@ -772,6 +770,8 @@ ul {
 #Contact .Contact-Container .Contact-Form .Button-Send-Message {
     width: 28%;
     height: 10%;
+
+    border: none;
 
     border-radius: 3px;
 

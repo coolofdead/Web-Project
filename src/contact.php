@@ -1,5 +1,19 @@
 <?php
     require_once("../src/user.php");
+
+    if (count($_POST))
+    {
+        $statement = $connection->prepare("
+        INSERT INTO contact (id, name, mail, message)
+        VALUES
+                (:id, :name, :mail, :message);
+        ");
+        $statement->bindValue(':id', NULL);
+        $statement->bindValue(':name', $_POST["name"]);
+        $statement->bindValue(':mail', $_POST["mail"]);
+        $statement->bindValue(':message', $_POST["message"]);
+        $statement->execute();
+    }
 ?>
 
 <div id="Contact">
@@ -16,15 +30,15 @@
                 </ul>
             </div>
 
-            <div class="Contact-Form">
-                <input type="text" name="name" placeholder="Enter your name here" class="Form-Name">
-                <input type="text" name="mail" placeholder="Enter your e-mail here" class="Form-Mail">
-                <textarea type="text" name="message" placeholder="Enter your message here" class="Form-Message"></textarea>
+            <form class="Contact-Form" action="index.php" method="POST">
+                <input type="text" value="" name="name" placeholder="Enter your name here" class="Form-Name">
+                <input type="text" value="" name="mail" placeholder="Enter your e-mail here" class="Form-Mail">
+                <textarea type="text" value="" name="message" placeholder="Enter your message here" class="Form-Message"></textarea>
 
-                <div class="Button-Send-Message">
-                    <a href="">Send Message</a>
-                </div>
-            </div>
+                <button class="Button-Send-Message">
+                    <a type="submit" href="">Send Message</a>
+                </button>
+            </form>
         </div>
     </div>
 </div>

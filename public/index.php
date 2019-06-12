@@ -4,14 +4,6 @@
     $password = "";
     $connection = new PDO($dbInfo, $username, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-
-    session_start();
-    $request = $connection->prepare("
-    SELECT front_color, back_color FROM abilities;
-    ");
-    $request->execute();
-    $styles = $request->fetchAll(PDO::FETCH_ASSOC);
-    $_SESSION["styles"] = $styles;
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +12,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Web Project</title>
-        <link rel="stylesheet" type="text/css" media="screen" href="./css.php">
+        <style> <?php require_once("css.php"); ?> </style>
         <script> var projectUrls = ["Images/flyday.jpg", "Images/Maze.png", "Images/Pathfinder.png", "Images/flower.jpg"]; </script>
         <script src="./js.js" type="text/javascript" defer></script>
     </head>
