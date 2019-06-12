@@ -1,11 +1,21 @@
 <?php
-    $skills = [
-        ["name" => "HTML", "pourcentage" => 90, "year_experience" => 1, "icon" => "html.png"],
-        ["name" => "CSS", "pourcentage" => 80, "year_experience" => 2, "icon" => "css.png"],
-        ["name" => "JavaScript", "pourcentage" => 90, "year_experience" => 2, "icon" => "javascript.png"],
-        ["name" => "C#", "pourcentage" => 90, "year_experience" => 2, "icon" => "Csharp.png"],        
-        ["name" => "Php", "pourcentage" => 60, "year_experience" => 1, "icon" => "php.png"]       
-    ];
+    $request = $connection->prepare("
+    SELECT * FROM abilities;
+    ");
+    $request->execute();
+    $result = $request->fetchAll(PDO::FETCH_ASSOC);
+    
+    $skills = [];
+    foreach($result as $skill)
+    {
+        $newSkill = [];
+        foreach($skill as $key => $value)
+        {
+            $newSkill[$key] = $value;
+        }
+
+        array_push($skills, $newSkill);
+    }
 ?>
 
 <div id="Skills">
@@ -27,12 +37,12 @@
                         <img src="Images\\' . $skill["icon"] .'">
                         <div class="List-Container">
                             <div class="List-Elem-Text">
-                                <p><strong>' . $skill["name"] . ' - </strong> ' . $skill["year_experience"] . ' year of experience</p>
-                                <p><strong>' . $skill["pourcentage"] . '%</strong></p>
+                                <p><strong>' . $skill["name"] . ' - </strong> ' . $skill["experience"] . ' year of experience</p>
+                                <p><strong>' . $skill["percentage"] . '%</strong></p>
                             </div>
 
                             <div class="Skill-ProgressionBar">
-                                <div class="Skill-ProgressionCurrent" style="width: ' . $skill["pourcentage"] . '%;"></div>
+                                <div class="Skill-ProgressionCurrent" style="width: ' . $skill["percentage"] . '%;"></div>
                             </div>
                         </div>
                     </div>');

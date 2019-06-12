@@ -1,3 +1,9 @@
+<?php
+   header('content-type: text/css');
+   ob_start('ob_gzhandler');
+   header('Cache-Control: max-age=31536000, must-revalidate');
+?>
+
 html, body {
     height: 100vh;
     width: 100%;
@@ -428,45 +434,23 @@ ul {
     transition: all 1.3s ease-in-out;
 }
 
-#Skills .Skills-List-Element:nth-child(1) .Skill-ProgressionBar {
-    background: rgba(228, 154, 18, 0.39);
-}
-
-#Skills .Skills-List-Element:nth-child(1) .Skill-ProgressionBar .Skill-ProgressionCurrent {
-    background: #f8ab1b;
-}
-
-#Skills .Skills-List-Element:nth-child(2) .Skill-ProgressionBar {
-    background: rgba(60, 119, 247, 0.39);
-}
-
-#Skills .Skills-List-Element:nth-child(2) .Skill-ProgressionBar .Skill-ProgressionCurrent {
-    background: #3d98ff;
-}
-
-#Skills .Skills-List-Element:nth-child(3) .Skill-ProgressionBar {
-    background: rgba(238, 216, 16, 0.39);
-}
-
-#Skills .Skills-List-Element:nth-child(3) .Skill-ProgressionBar .Skill-ProgressionCurrent {
-    background: #f1e42a;
-}
-
-#Skills .Skills-List-Element:nth-child(4) .Skill-ProgressionBar {
-    background: rgba(201, 10, 185, 0.39);
-}
-
-#Skills .Skills-List-Element:nth-child(4) .Skill-ProgressionBar .Skill-ProgressionCurrent {
-    background: #da39a9;
-}
-
-#Skills .Skills-List-Element:nth-child(5) .Skill-ProgressionBar {
-    background: rgba(82, 40, 179, 0.39);
-}
-
-#Skills .Skills-List-Element:nth-child(5) .Skill-ProgressionBar .Skill-ProgressionCurrent {
-    background: #b674e2;
-}
+<?php
+    session_start();
+    $index = 0;
+    foreach($_SESSION["styles"] as $skill)
+    {
+        $index++;
+        echo("
+        #Skills .Skills-List-Element:nth-child(" . $index . ") .Skill-ProgressionBar {
+            background: " . $skill['back_color'] . ";
+        }
+        
+        #Skills .Skills-List-Element:nth-child(" . $index . ") .Skill-ProgressionBar .Skill-ProgressionCurrent {
+            background: " . $skill['front_color'] . ";
+        }
+        ");
+    }
+?>
 
 #Services .Service-Container {
     height: 80%;
@@ -865,6 +849,10 @@ ul {
 
     #About .Personnal-Info .Info {
         margin-bottom: 5%;
+    }
+
+    #About #Profile-picture {
+        width: 200px;
     }
 
     #Services .Service-Container {
