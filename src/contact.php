@@ -1,30 +1,17 @@
 <?php
-require_once '../mail/autoload.php';
-require_once '../src/mail.ignore';
+    require_once '../mail/autoload.php';
+    require_once '../src/mail.txt';
+    require_once '../src/mail.php';
 
-// Create the Transport
-$transport = (new Swift_SmtpTransport('smtp-relay.sendinblue.com', 587))
-  ->setUsername($username)
-  ->setPassword($password)
-;
-
-// Create the Mailer using your created Transport
-$mailer = new Swift_Mailer($transport);
-
-// Create a message
-$message = (new Swift_Message('Test anonyme'))
-  ->setFrom(['portfolio@contact.com' => 'A contact'])
-  ->setTo(['thomas.giovannoni@hotmail.fr' => 'Thomas'])
-  ->setBody('Coucou ça marche')
-  ;
-
-// Send the message
-$result = $mailer->send($message);
-?>
-
-
-
-<?php
+    $mail = new Mail('smtp-relay.sendinblue.com', 587, $username, $password);
+    $mail->CreateMessage(
+        "random personn", 
+        "I'm the message", 
+        ["contactme@portfolio.com" => $_POST["name"]], 
+        ["thomas.giovannoni@hotmail.fr" => "thomas"]
+    );
+    $mail->SendMessage();
+    
     require_once("../src/user.php");
 
     if (count($_POST))
