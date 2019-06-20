@@ -1,18 +1,8 @@
 <?php
-    require_once '../mail/autoload.php';
-    require_once '../src/mail.txt';
-    require_once '../src/mail.php';
-
-    $mail = new Mail('smtp-relay.sendinblue.com', 587, $username, $password);
-    $mail->CreateMessage(
-        "random personn", 
-        "I'm the message", 
-        ["contactme@portfolio.com" => $_POST["name"]], 
-        ["thomas.giovannoni@hotmail.fr" => "thomas"]
-    );
-    $mail->SendMessage();
-    
-    require_once("../src/user.php");
+    require_once "../mail/autoload.php";
+    require_once "../src/mail.txt";
+    require_once "../src/mail.php";
+    require_once "../src/user.php";
 
     if (count($_POST))
     {
@@ -26,6 +16,15 @@
         $statement->bindValue(':mail', $_POST["mail"]);
         $statement->bindValue(':message', $_POST["message"]);
         $statement->execute();
+
+        $mail = new Mail($username, $password);
+        $mail->CreateMessage(
+            $_POST["name"],
+            $_POST["message"],
+            [$_POST["mail"] => $_POST["name"]],
+            ["thomas.giovannoni@hotmail.fr" => "thomas"]
+        );
+        $mail->SendMessage();
     }
 ?>
 
