@@ -1,6 +1,0 @@
-cmd
-php -S localhost:4242 -t public
--S = Server
-localhost:xxxx (port de mon choix)
--t = directory ou le php est situé
-public (nom de mon directory)
