@@ -1,3 +1,20 @@
+<?php
+  require_once("../../src/Admin/user_session_manager.php");
+  
+  InitSession();
+
+  if (count($_GET)) {
+    if (array_key_exists("disconnect", $_GET)) {
+      Logout();
+    }
+  }
+
+  if (!$_SESSION["isLogged"]) {
+    header("Location: http://portfolio/admin/login.php");
+    exit();
+  }
+?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,9 +28,7 @@
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
     <style>
-
         body {
         padding-top: 5rem;
         }
@@ -54,6 +69,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="?disconnect">Disconnect</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
