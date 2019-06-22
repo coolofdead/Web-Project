@@ -34,7 +34,7 @@
                 foreach($skills as $skill)
                 {
                     print('<div class="Skills-List-Element">
-                        <img src="Images\\' . $skill["icon"] .'">
+                        <img src="' . $skill["icon"] .'">
                         <div class="List-Container">
                             <div class="List-Elem-Text">
                                 <p><strong>' . $skill["name"] . ' - </strong> ' . $skill["experience"] . ' year of experience</p>

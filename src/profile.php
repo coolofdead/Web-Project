@@ -1,5 +1,5 @@
 <?php
-    require_once("../src/user.php");
+    require_once("../src/Classes/User.php");
 ?>
 
 <div id="Profile">

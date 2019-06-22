@@ -1,12 +1,16 @@
 <?php
   session_start();
 
+  if ($_SESSION["isLogged"]) {
+    header("Location: http://portfolio/admin/index.php");
+    exit();
+  }
+
   require_once("../../src/Admin/check_log.php");
   
   $wrongUsernamePassword = false;
   if (count($_POST)) {
     $_SESSION["isLogged"] = Login($_POST["mail"], $_POST["password"]);
-    
     if ($_SESSION["isLogged"]) {
         header("Location: http://portfolio/admin/index.php");
         exit();
@@ -22,7 +26,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Floating labels example · Bootstrap</title>
+    <title>Login</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
 

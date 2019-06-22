@@ -2,7 +2,7 @@
     require_once "../mail/autoload.php";
     require_once "../src/mail.txt";
     require_once "../src/mail.php";
-    require_once "../src/user.php";
+    require_once "../src/Classes/User.php";
 
     if (count($_POST))
     {
@@ -19,8 +19,8 @@
 
         $mail = new Mail($username, $password);
         $mail->CreateMessage(
-            $_POST["name"],
-            $_POST["message"],
+            "Portfolio: message",
+            "You got a mail from " . $_POST["name"],
             [$_POST["mail"] => $_POST["name"]],
             ["thomas.giovannoni@hotmail.fr" => "thomas"]
         );
