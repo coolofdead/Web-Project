@@ -2,9 +2,9 @@
     // Init session once
     function InitSession() : void {
         session_start();
-
-        if (!array_key_exists("isInit", $_SESSION)) {
-            $_SESSION["isInit"] = true;
+        
+        if (!isset($_SESSION["isLogged"])) {
+            session_destroy();
             
             $_SESSION["page"] = "skills";
             $_SESSION["isLogged"] = false;
@@ -17,7 +17,7 @@
             session_start();
         }
 
-        session_destroy();
+        $_SESSION["isLogged"] = false;
 
         header("Location: http://portfolio/admin/index.php");
         exit();

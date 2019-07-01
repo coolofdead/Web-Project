@@ -13,12 +13,12 @@
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         $isLoged = false;
-
+        
+        // session_start();
         foreach($result as $value) {
             if ($value["username"] == $mail && $value["password"] == $password) {
                 $isLoged = true;
 
-                session_start();
                 $_SESSION["acces"] = $value["acces"];
                 break;
             }

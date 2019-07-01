@@ -9,14 +9,14 @@
         $statement = $connection->prepare("
         INSERT INTO contact (id, name, mail, message)
         VALUES
-                (:id, :name, :mail, :message);
+        (:id, :name, :mail, :message);
         ");
         $statement->bindValue(':id', NULL);
         $statement->bindValue(':name', $_POST["name"]);
         $statement->bindValue(':mail', $_POST["mail"]);
         $statement->bindValue(':message', $_POST["message"]);
         $statement->execute();
-
+        
         $mail = new Mail($username, $password);
         $mail->CreateMessage(
             "Portfolio: message",
@@ -44,7 +44,7 @@
 
             <form class="Contact-Form" action="index.php" method="POST">
                 <input type="text" value="" name="name" placeholder="Enter your name here" class="Form-Name">
-                <input type="text" value="" name="mail" placeholder="Enter your e-mail here" class="Form-Mail">
+                <input type="email" value="" name="mail" placeholder="Enter your e-mail here" class="Form-Mail">
                 <textarea type="text" value="" name="message" placeholder="Enter your message here" class="Form-Message"></textarea>
 
                 <button class="Button-Send-Message">

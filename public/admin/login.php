@@ -1,18 +1,14 @@
 <?php
   session_start();
-
-  if ($_SESSION["isLogged"]) {
-    header("Location: http://portfolio/admin/index.php");
-    exit();
-  }
-
+  
   require_once("../../src/Admin/check_log.php");
   
   $wrongUsernamePassword = false;
   if (count($_POST)) {
     $_SESSION["isLogged"] = Login($_POST["mail"], $_POST["password"]);
+    $_SESSION["page"] = "skills";
     if ($_SESSION["isLogged"]) {
-        header("Location: http://portfolio/admin/index.php");
+      header("Location: http://portfolio/admin/index.php");
         exit();
     }
 

@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 4.8.5
+﻿-- phpMyAdmin SQL Dump
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 22 juin 2019 à 00:37
--- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Généré le :  sam. 22 juin 2019 à 10:47
+-- Version du serveur :  5.7.24
+-- Version de PHP :  7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,19 +58,17 @@ INSERT INTO `abilities` (`icon`, `name`, `experience`, `percentage`, `front_colo
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
-  `username` char(255) COLLATE utf8mb4_bin NOT NULL,
-  `password` char(255) COLLATE utf8mb4_bin NOT NULL,
+  `username` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `acces` int(11) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `admin`
 --
 
 INSERT INTO `admin` (`username`, `password`, `acces`) VALUES
-('thomas.giovannoni@hotmail.fr', 'password', 1),
-('user@portfolio.fr', 'user', 0),
-('thomas.giovannoni@hotmail.fr', 'password', 1),
+('admin@portfolio.fr', 'admin', 1),
 ('user@portfolio.fr', 'user', 0);
 
 -- --------------------------------------------------------
@@ -81,11 +79,19 @@ INSERT INTO `admin` (`username`, `password`, `acces`) VALUES
 
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE IF NOT EXISTS `contact` (
-  `id` int(11) DEFAULT NULL,
-  `name` char(255) COLLATE utf8mb4_bin NOT NULL,
-  `mail` char(255) COLLATE utf8mb4_bin NOT NULL,
-  `message` varchar(8000) COLLATE utf8mb4_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mail` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `mail`, `message`) VALUES
+(37, 'matthias', 'matthias@legentil.fr', 'le message');
 
 -- --------------------------------------------------------
 

@@ -21,18 +21,14 @@
         }
 
         public function SendMessage() : void {
-            $mailer = new Swift_Mailer($this->transport);
-
             if (!isset($this->message)) {
-                print("You should use CreateMessage first");
                 return;
             }
-
-            if ($mailer->send($this->message)) {
-                // print("mail sent!");
+            
+            try {
+                $mailer = new Swift_Mailer($this->transport);
             }
-            else {
-                // print("something went wrong..");
+            catch (Exception $e) {
             }
         }
     }
